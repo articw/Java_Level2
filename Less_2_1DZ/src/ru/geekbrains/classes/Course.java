@@ -11,13 +11,11 @@ import ru.geekbrains.classes.Application;
 public class Course {
 
 
-    public Obstacle[] obstacles = new Obstacle[3];// создаем массив препятсвий - барьер, бассейн, бег
+    public Obstacle[] obstacles;// создаем массив препятсвий - барьер, бассейн, бег
 
     //в конструкторе заполняем массив
-    public Course(Wall wall, Water water, Cross cross){
-        obstacles[0] = wall;
-        obstacles[1] = water;
-        obstacles[2] = cross;
+    public Course(Obstacle[] obstacles){
+        this.obstacles = obstacles;
     }
 
     //Метод прохождения препятствий
