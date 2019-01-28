@@ -24,7 +24,7 @@ public class MainClass {
         };
 
         String[][] arrayOfFive = {
-                {"4","6", "8", "1"},
+                {"4", "6", "8", "1"},
                 {"56", "23", "12", "43"},
                 {"32", "67", "45", "43"},
                 {"50", "76", "32", "64"},
@@ -33,7 +33,7 @@ public class MainClass {
         };
 
         String[][] arrayOfPlus = {
-                {"4","6", "8", "1"},
+                {"4", "6", "8", "1"},
                 {"56", "23", "12", "43"},
                 {"32", "67", "45", "43"},
                 {"50", "76", "", "64"}
@@ -41,23 +41,23 @@ public class MainClass {
         };
 
         //нормальный массив
-        try{
+        try {
             arrayOfFourTest(arrayOfFour);
-        }catch (MyArrayDataException | MyArraySizeException e){
+        } catch (MyArrayDataException | MyArraySizeException e) {
             System.out.println(e.getMessage());
         }
 
         //не та размерность
-        try{
+        try {
             arrayOfFourTest(arrayOfFive);
-        }catch (MyArrayDataException | MyArraySizeException e){
+        } catch (MyArrayDataException | MyArraySizeException e) {
             System.out.println(e.getMessage());
         }
 
         //не удалось преобразовать тип
-        try{
+        try {
             arrayOfFourTest(arrayOfPlus);
-        }catch (MyArrayDataException | MyArraySizeException e){
+        } catch (MyArrayDataException | MyArraySizeException e) {
             System.out.println(e.getMessage());
         }
 
@@ -70,23 +70,30 @@ public class MainClass {
 
         int count = 0;
         //Проеврка, если массив не 4х4
-        if(4 != arr.length ){
-            if(4 != arr[0].length){
+        if (4 != arr.length) {
             throw new MyArraySizeException();
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (4 != arr[i].length) {
+                throw new MyArraySizeException();
             }
         }
+
 
         //обходим массив, преобразуем строковые величины в int и складываем
-        for(int i = 0; i < arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
-                count += Integer.parseInt(arr[i][j]);
-                throw new MyArrayDataException(i, j);
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                try {
+                    count += Integer.parseInt(arr[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException(i,j);
+                }
+
             }
 
         }
+
         return count;
     }
-
-
-
 }
+
