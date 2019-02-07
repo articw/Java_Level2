@@ -74,7 +74,6 @@ public class MainClass {
     }
 
 
-
     public static void main(String[] args)  {
             FirstArrayMethod fArr = new FirstArrayMethod();
             fArr.MyArrayCalc(arr);
