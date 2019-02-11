@@ -46,6 +46,8 @@ out/
 .idea/
 .idea
 src/Test
+src/Test/
+.idea/*.xml
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
