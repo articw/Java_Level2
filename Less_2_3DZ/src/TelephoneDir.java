@@ -4,30 +4,27 @@ import java.util.Map;
 
 public class TelephoneDir {
 
-    //ключ - фамилия, значение - коллекция телефонов
-   private Map<String, HashSet<String>> mapPhone;
+    public static void main(String[] args) {
+        PhoneBook phoneBook = new PhoneBook();
 
-   //конструктор класса
-   public TelephoneDir(){
-       this.mapPhone = new HashMap<>();
-   }
+        phoneBook.addPhoneNumber("Иван", "12345");
+        phoneBook.addPhoneNumber("Петр", "546789");
+        phoneBook.addPhoneNumber("Иван", "434234");
 
-   //Не смог понять, как реализовать этот метод
-   public void add(String lastName, String phone){
-      for(Map.Entry<String, String> o : mapPhone.entrySet());
-
-   }
-
-   public HashMap<String, HashSet<String>> get(String lastName){
-       return this.mapPhone;
-   }
+        System.out.println(phoneBook.get("Иван"));
+        System.out.println(phoneBook.get("Петр"));
 
 
-
-
-
-
+    }
 
 }
+
+
+
+
+
+
+
+
 
 

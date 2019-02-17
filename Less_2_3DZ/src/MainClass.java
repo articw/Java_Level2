@@ -13,10 +13,7 @@
 
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -25,7 +22,8 @@ public class MainClass {
         String[] words  = {"красный", "белый", "красный", "черный", "желтый", "зеленый", "фиолетовый", "белый"};
 
         //
-        HashMap<String, Integer> mapWords = new HashMap<>();
+
+        Map<String, Integer> mapWords = new HashMap<>();
         for(String word : words){
             mapWords.put(word, mapWords.getOrDefault(word, 0) +1);
         }
@@ -39,14 +37,7 @@ public class MainClass {
         System.out.println(uniqList);
 
 
-        TelephoneDir pd = new TelephoneDir();
 
-        pd.add("Петров", "546-56-87");
-        pd.add("Петров", "876-45-32");
-        pd.add("Сидоров", "321-32-98");
-
-
-        pd.get("Петров");
 
 
 
